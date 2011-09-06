@@ -5,27 +5,19 @@
 		<script src="scripts\jquery-1.6.2.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			$(function() {
-
-				var xml;
+				var item = 4;
 				var APP = {
 					Init : function() {
-						APP.XML();
+						APP.XML(function(data){
+							BUILD.List(data);
+						});
 					},
-					XML : function() {
-						function GetXML(callback){
-						$.get("xml/tarazz_AU.xml", function(data) {
-							if($.isFunction(callback)) {
-								var data = $(data).find('feeds');
-								callback.call(data, data);
-							}
-						});
-							
-						}
-						var x = GetXML(function (data) {
-								console.log(x);
-						  return data;
-						});
-						console.log(x);
+					XML : function GetXML(callback) {
+							$.get("xml/tarazz_AU.xml", function(data) {
+								if($.isFunction(callback)) {
+									var data = $(data).find('feeds');
+									callback.call(data, data);
+							});
 					},
 				};
 				var BUILD = {
