@@ -1,5 +1,6 @@
 $(function() {
 	var item = 4;
+	var elem = $('#slider');
 	var APP = {
 		Init : function() {
 			APP.XML(function(data) {
@@ -15,12 +16,11 @@ $(function() {
 		Animate: function (direction) {
 		  switch(direction){
 		  	case "right":
-		  		console.log("right");
-		  	break;
+		  		elem.find('ul').append(elem.find('li:lt('+item+')'));
+		  		break;
 		  	case "left":
 		  		console.log("left");
-		  	break;
-		  	
+		  		break;
 		  } 
 		},
 		XML : function GetXML(callback) {
