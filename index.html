@@ -9,7 +9,7 @@
 				var xml;
 				var APP = {
 					Init : function() {
-						console.log(APP.XML());
+						APP.XML();
 					},
 					XML : function() {
 						function GetXML(callback){
@@ -17,7 +17,6 @@
 							if($.isFunction(callback)) {
 								var data = $(data).find('feeds');
 								callback.call(data, data);
-
 							}
 						});
 							
