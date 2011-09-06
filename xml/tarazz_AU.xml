@@ -1,0 +1,139 @@
+﻿<gallery>
+    <!-- Feeds -->
+    <!-- ===================================================================================================== -->
+    
+    <feeds>
+        <name>Amazon.com</name>
+        <row>0</row>
+        <image>/shop/images/home/feeds/amz_1.jpg</image>
+        <link>http://amazon3.tarazz.com/ref=gno_logo</link>
+    </feeds>
+    <feeds>
+        <name>macys.com</name>
+        <row>1</row>
+        <image>/shop/images/home/feeds/macys_1.jpg</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS3184</link>
+    </feeds>
+    <feeds>
+        <row>2</row>
+        <name>Bloomingdale's</name>
+        <image>/shop/images/home/feeds/blooming_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS13867</link>
+    </feeds>
+    <feeds>
+        <row>3</row>
+        <name>Paul Fredrick MenStyle</name>
+        <image>/shop/images/home/feeds/paul_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS775</link>
+    </feeds>
+    <feeds>
+        <row>4</row>
+        <name>Precious Moments Inc</name>
+        <image>/shop/images/home/feeds/precious_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS36316</link>
+    </feeds>
+    <feeds>
+        <row>5</row>
+        <name>Karmaloop</name>
+        <image>/shop/images/home/feeds/kamar_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS13930</link>
+    </feeds>
+    <feeds>
+        <row>6</row>
+        <name>Forzieri</name>
+        <image>/shop/images/home/feeds/forzieri_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS1805</link>
+    </feeds>
+    <feeds>
+        <row>7</row>
+        <name>Shop Savannahs</name>
+        <image>/shop/images/home/feeds/savan_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS36619</link>
+    </feeds>
+    <feeds>
+        <row>8</row>
+        <name>Beauty.com</name>
+        <image>/shop/images/home/feeds/beauty_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS3002</link>
+    </feeds>
+    <feeds>
+        <row>9</row>
+        <name>Drugstore.com</name>
+        <image>/shop/images/home/feeds/drug_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS2762</link>
+    </feeds>
+    <feeds>
+        <row>10</row>
+        <name>Gaiam</name>
+        <image>/shop/images/home/feeds/gaiam_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS2311</link>
+    </feeds>
+    <feeds>
+        <row>11</row>
+        <name>Giggle</name>
+        <image>/shop/images/home/feeds/giggle_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS24568</link>
+    </feeds>
+    <feeds>
+        <row>12</row>
+        <name>The Natural Store</name>
+        <image>/shop/images/home/feeds/natural_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS35864</link>
+    </feeds>
+    <feeds>
+        <row>13</row>
+        <name>Callpod</name>
+        <image>/shop/images/home/feeds/yoox_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS35339</link>
+    </feeds>
+    <feeds>
+        <row>14</row>
+        <name>Sephora</name>
+        <image>/shop/images/home/feeds/sephora_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS2417</link>
+    </feeds>
+	<feeds>
+        <row>15</row>
+        <name>As We Change</name>
+        <image>/shop/images/home/feeds/aswechange_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/Feed/home.aspx?mid=LS24823</link>
+    </feeds>
+	<feeds>
+        <row>16</row>
+        <name>Bag King</name>
+        <image>/shop/images/home/feeds/bagking_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/Feed/home.aspx?mid=LS36326</link>
+    </feeds>
+	<feeds>
+        <row>18</row>
+        <name>Luggage Online</name>
+        <image>/shop/images/home/feeds/luggage_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS1565</link>
+    </feeds>
+	<feeds>
+        <row>19</row>
+        <name>Buy.com</name>
+        <image>/shop/images/home/feeds/buy_1.jpg?v=1</image>
+        <link>http://www.tarazz.com/feed/home.aspx?mid=LS36342</link>
+    </feeds>
+
+    <!--Amazon Category -->
+    <!-- ===================================================================================================== -->
+    <amazon>
+        <image>/shop/images/home/amazon/1.jpg</image>
+        <link>http://amazon3.tarazz.com/Transformer-TF101-A1-10-1-Inch-Tablet-Computer/dp/B004U78J1G/ref=sr_1_1?ie=UTF8&amp;qid=1313647602&amp;sr=8-1</link>
+    </amazon>
+    <amazon>
+        <image>/shop/images/home/amazon/2.jpg</image>
+        <link>http://amazon3.tarazz.com/How-Made-000-Stock-Market/dp/1614270090/ref=pd_sim_b_24</link>
+		</amazon>
+    <amazon>
+        <image>/shop/images/home/amazon/3.jpg</image>
+        <link>http://amazon3.tarazz.com/Betsey-Johnson-Mermaids-Starfish-Bracelet/dp/B0051R2M94/ref=sr_1_43?s=jewelry&amp;ie=UTF8&amp;qid=1313654233&amp;sr=1-43</link>
+    </amazon>
+    <amazon>
+        <image>/shop/images/home/amazon/4.jpg</image>
+        <link>http://amazon3.tarazz.com/Contours-ZL014-TLO1-Lite-Stroller-Tangerine/dp/B0030EH8OO/ref=sr_1_1?ie=UTF8&amp;qid=1313725872&amp;sr=8-1</link>
+    </amazon>
+    
+</gallery>
