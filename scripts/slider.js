@@ -1,22 +1,21 @@
 $(function() {
-	var item = 3;
-	var elem = $('#slider');
-	var xml,timer;
-	var delay = 3000;
-	var autoSlide = function () {
-	  	APP.Animate('right');
-	};
-	var s = {
-		Test : function (argument) {
-		  
+	var setting = {
+		item : 3,
+		elem : $('#slider'),
+		xml : '',
+		timer : 0,
+		delay : 3000,
+		autoSlide : function () {
+	  		APP.Animate('right');
 		}
-	};
+	}
+	var elem = $('#slider');
 	var APP = {
 		Init : function() {
 			APP.XML(function(data) {
-				xml = data;
-				APP.Load(xml.splice(0,item));
-				APP.Load(xml.splice(0,item));
+				setting.xml = data;
+				APP.Load(setting.xml.splice(0,setting.item));
+				APP.Load(setting.xml.splice(0,setting.item));
 			});
 			APP.BindKeys();
 			APP.AutoSlide();
@@ -27,18 +26,18 @@ $(function() {
 			})
 		},
 		AutoSlide : function () {
-		   clearTimeout(timer);
-		   timer = setInterval(autoSlide,delay);
+		   clearTimeout(setting.timer);
+		   setting.timer = setInterval(setting.autoSlide,setting.delay);
 		},
 		Animate: function (direction) {
 		  var width = elem.find('li:first').width();
-		  var left = -(width*item);
+		  var left = -(width*setting.item);
 		  var margin =  parseInt(elem.find('li:first').css('margin-left')) || 0; 
 		  var leftMargin = margin+left  
 		  switch(direction){
 		  	case "right":
 		  		var max = elem.find('li').length * width;
-		  		if(APP.Load(xml.splice(0,item))){
+		  		if(APP.Load(setting.xml.splice(0,setting.item))){
 		  			 if((-(margin + left)) >= max){
 		  			 	leftMargin = 0;
 		  			 }
@@ -54,8 +53,8 @@ $(function() {
 		  } 
 		},
 		Slide : function  (margin) {
-			if(!elem.find('li').is(':animated')){
-	  			elem.find('li:first').animate({'margin-left':(margin)+'px'},500);
+			if(!setting.elem.find('li').is(':animated')){
+	  			setting.elem.find('li:first').animate({'margin-left':(margin)+'px'},500);
 	  		}
 		},
 		Load: function  (images) {
@@ -72,7 +71,7 @@ $(function() {
 				success: function(data) {
 					if($.isFunction(callback)) {
 						var data = $(data).find('feeds');
-						xml = data;
+						setting.xml = data;
 						callback.call(data, data);
 					}
 				}
@@ -97,7 +96,7 @@ $(function() {
 		}
 	}
 	
-    $.extend(BUILD,ss);
+    //$.extend(BUILD,ss);
 
 	APP.Init();
 	
