@@ -1,33 +1,44 @@
-$(function() {
+
+$.fn.SLIDER = function(list,options) {
 	var setting = {
-		item : 3,
-		elem : $('#slider'),
-		xml : '',
-		timer : 0,
-		delay : 3000,
-		autoSlide : function () {
+		item : 4,
+		delay : 1000,
+		auto : true
+	}
+	var	autoSlide = function () {
 	  		APP.Animate('right');
 		}
-	}
-	var elem = $('#slider');
+	var timer,elem = $(this);
+	setting = $.extend(setting,options);
+
 	var APP = {
 		Init : function() {
-			APP.XML(function(data) {
-				setting.xml = data;
-				APP.Load(setting.xml.splice(0,setting.item));
-				APP.Load(setting.xml.splice(0,setting.item));
-			});
+			APP.Load(list.splice(0,setting.item));
+			APP.Load(list.splice(0,setting.item));
 			APP.BindKeys();
 			APP.AutoSlide();
 		},
 		BindKeys: function() {
-			$('.button').click(function () {
+			elem.find('.button').click(function () {
 			  	APP.Animate(this.id);
+			})
+			elem.find('ul, #controls span').bind('mouseover mouseout',function(evt){
+				switch(evt.type){
+					case 'mouseover':
+						setting.auto = false;
+					break;
+					case 'mouseout':
+						setting.auto = true;
+					break;
+				}
+				APP.AutoSlide();
 			})
 		},
 		AutoSlide : function () {
-		   clearTimeout(setting.timer);
-		   setting.timer = setInterval(setting.autoSlide,setting.delay);
+		   clearTimeout(timer);
+			if(setting.auto){
+			   timer = setInterval(autoSlide,setting.delay);
+			}
 		},
 		Animate: function (direction) {
 		  var width = elem.find('li:first').width();
@@ -37,7 +48,7 @@ $(function() {
 		  switch(direction){
 		  	case "right":
 		  		var max = elem.find('li').length * width;
-		  		if(APP.Load(setting.xml.splice(0,setting.item))){
+		  		if(APP.Load(list.splice(0,setting.item))){
 		  			 if((-(margin + left)) >= max){
 		  			 	leftMargin = 0;
 		  			 }
@@ -53,54 +64,24 @@ $(function() {
 		  } 
 		},
 		Slide : function  (margin) {
-			if(!setting.elem.find('li').is(':animated')){
-	  			setting.elem.find('li:first').animate({'margin-left':(margin)+'px'},500);
+			if(!elem.find('li').is(':animated')){
+	  			elem.find('li:first').animate({'margin-left':(margin)+'px'},500);
 	  		}
 		},
-		Load: function  (images) {
-		  $(images).each(function () {
+		Load: function  (items) {
+		  $(items).each(function () {
 		 	 BUILD.List(this);
 		  })
-		  return images.length==0?true:false;
-		},
-		XML : function GetXML(callback) {
-			$.ajax({
-				type: "GET",
-				dataType: "xml",
-				url:"xml/tarazz_AU.xml" 	,
-				success: function(data) {
-					if($.isFunction(callback)) {
-						var data = $(data).find('feeds');
-						setting.xml = data;
-						callback.call(data, data);
-					}
-				}
-			});
+		  return items.length==0?true:false;
 		}
 	};
-	
-	var ss = {
-		List : function (item) {
-			 var src= $(item).find('image').text();
-			 var img = $('<img>',{"src": "http://www.tarazz.com" + src});
-			 var div = $('<span>',{"class":"test"}).text('asdfsdf');
-			 elem.find('ul').append($('<li>').append(div).append(img));
-		}
-	}
-	
 	var BUILD = {
 		List : function (item) {
 			 var src= $(item).find('image').text();
 			 var img = $('<img>',{"src": "http://www.tarazz.com" + src});
-			 elem.find('ul').append($('<li>').append(img));
+			 var anchor = $('<a>',{"href":$(item).find('link').text()}).append(img);
+			 elem.find('ul').append($('<li>').append(anchor));
 		}
 	}
-	
-    //$.extend(BUILD,ss);
-
 	APP.Init();
-	
-	console.log(BUILD);
-	
-	
-})
+};

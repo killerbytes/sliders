@@ -7,15 +7,52 @@
 	</head>
 	<body>
 		<div id="main">
-			<div id="temp"></div>
-			<div id="controls">
-				<span id="left" class="button">Left</span>
-				<span id="right" class="button">Right</span>
+			<div id="slider">
+				<ul></ul>
+
+				<div id="controls">
+					<span id="left" class="button">Left</span>
+					<span id="right" class="button">Right</span>
+				</div>
 			</div>
 			
-			<div id="slider">
+			<div id="amazon">
 				<ul></ul>
 			</div>
 		</div>
 	</body>
 </html>
+
+<script>
+
+
+
+	$(function(){
+		function GetXML(callback) {
+			$.ajax({
+				type: "GET",
+				dataType: "xml",
+				url:"xml/tarazz_AU.xml" 	,
+				success: function(data) {
+					if($.isFunction(callback)) {
+						var data = data;//$(data).find('feeds');
+						
+						
+						callback.call(data, data);
+					}
+				}
+			});
+		}
+	
+	GetXML(function(data){
+		
+	$('#slider').SLIDER($(data).find('feeds'),{});	
+	$('#amazon').SLIDER($(data).find('amazon'),{item:1,auto:false});	
+
+	})
+
+		
+	
+		
+	})
+</script>
